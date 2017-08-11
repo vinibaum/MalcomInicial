@@ -1,0 +1,39 @@
+﻿@model webSiteInicial.Models.Musico
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Musico</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeMusico)
+        </dt>        
+        <dd>
+            @Html.DisplayFor(model => model.NomeMusico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Toca)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Toca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BandaPrincipal.NomeBanda)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BandaPrincipal.NomeBanda)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idMusico }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

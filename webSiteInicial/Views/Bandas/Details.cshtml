@@ -1,0 +1,26 @@
+﻿@model webSiteInicial.Models.Banda
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Banda</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeBanda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeBanda)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idBanda }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

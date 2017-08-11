@@ -29,5 +29,9 @@ namespace webSiteInicial.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<webSiteInicial.Models.Musico> Musicoes { get; set; }
+
+        public System.Data.Entity.DbSet<webSiteInicial.Models.Banda> Bandas { get; set; }
     }
 }

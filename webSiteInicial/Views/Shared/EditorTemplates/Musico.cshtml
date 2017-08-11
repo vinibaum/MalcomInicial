@@ -1,0 +1,9 @@
+﻿@using webSiteInicial.Models
+
+@model IList<Musico>
+<div class="ptr_author_line">
+    @using (Html.BeginForm())
+    {
+        @Html.EditorForModel()
+    }
+</div>
