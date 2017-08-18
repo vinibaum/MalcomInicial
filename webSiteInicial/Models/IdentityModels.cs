@@ -33,5 +33,9 @@ namespace webSiteInicial.Models
         public System.Data.Entity.DbSet<webSiteInicial.Models.Musico> Musicoes { get; set; }
 
         public System.Data.Entity.DbSet<webSiteInicial.Models.Banda> Bandas { get; set; }
+
+        public System.Data.Entity.DbSet<webSiteInicial.Models.Evento> Eventoes { get; set; }
+
+        public System.Data.Entity.DbSet<webSiteInicial.Models.ArteEvento> ArteEventoes { get; set; }
     }
 }

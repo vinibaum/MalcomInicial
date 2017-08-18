@@ -1,0 +1,332 @@
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oswald Regular'), local('Oswald-Regular'), url(http://themes.googleusercontent.com/static/fonts/oswald/v8/-g5pDUSRgvxvOl5u-a_WHw.woff) format('woff');
+}
+
+.rock_main{
+	width:100%;
+	float:left;
+	position:relative;
+	}
+.rock_logo{
+	width:100%;
+	position:absolute;
+	left:0;
+	top:15%;
+	z-index:999;
+	text-align:center;
+	}
+.rock_logo img{
+	max-width:100%;
+	}	
+
+.rock_view{
+	width:33.333333333%;
+	overflow:hidden;
+	float:left;
+	position:relative;
+	-webkit-transition:all 0.2s;
+	-moz-transition:all 0.2s;
+	-ms-transition:all 0.2s;
+	-o-transition:all 0.2s;
+	}
+.rock_view img{
+	width:100%;
+	height:100%;
+	background:#999;
+	-webkit-transition:all 0.3s;
+	-moz-transition:all 0.3s;
+	-ms-transition:all 0.3s;
+	-o-transition:all 0.3s;
+	}
+.rock_view:hover img{
+	-webkit-transform:scale(1.02,1.02);
+	-moz-transform:scale(1.02,1.02);
+	-ms-transform:scale(1.02,1.02);
+	-o-transform:scale(1.02,1.02);
+	
+	-webkit-transition:all 0.3s;
+	-moz-transition:all 0.3s;
+	-ms-transition:all 0.3s;
+	-o-transition:all 0.3s;
+	}		
+.rock_view .rock_view_over{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	}	
+
+@-webkit-keyframes view_over1{
+	0%{
+		transform: rotate3d(1,1,0, 45deg);
+	  }  
+	}
+@-webkit-keyframes view_over2{
+	0%{
+		transform: rotate3d(-1,1,0, 45deg);
+	  }  
+	}
+@-webkit-keyframes view_over3{
+	0%{
+		transform: rotate3d(1,-1,0, 45deg);
+	  }  
+	}
+@-webkit-keyframes view_over4{
+	0%{
+		transform: rotate3d(-1,-1,0, 45deg);
+	  }  
+	}
+
+
+@-moz-keyframes view_over1{
+	0%{
+		transform: rotate3d(1,1,0, 45deg);
+	  }  
+	}
+@-moz-keyframes view_over2{
+	0%{
+		transform: rotate3d(-1,1,0, 45deg);
+	  }  
+	}
+@-moz-keyframes view_over3{
+	0%{
+		transform: rotate3d(1,-1,0, 45deg);
+	  }  
+	}
+@-moz-keyframes view_over4{
+	0%{
+		transform: rotate3d(-1,-1,0, 45deg);
+	  }  
+	}
+	
+
+@-ms-keyframes view_over1{
+	0%{
+		transform: rotate3d(1,1,0, 45deg);
+	  }  
+	}
+@-ms-keyframes view_over2{
+	0%{
+		transform: rotate3d(-1,1,0, 45deg);
+	  }  
+	}
+@-ms-keyframes view_over3{
+	0%{
+		transform: rotate3d(1,-1,0, 45deg);
+	  }  
+	}
+@-ms-keyframes view_over4{
+	0%{
+		transform: rotate3d(-1,-1,0, 45deg);
+	  }  
+	}
+	
+
+@-o-keyframes view_over1{
+	0%{
+		transform: rotate3d(1,1,0, 45deg);
+	  }  
+	}
+@-o-keyframes view_over2{
+	0%{
+		transform: rotate3d(-1,1,0, 45deg);
+	  }  
+	}
+@-o-keyframes view_over3{
+	0%{
+		transform: rotate3d(1,-1,0, 45deg);
+	  }  
+	}
+@-o-keyframes view_over4{
+	0%{
+		transform: rotate3d(-1,-1,0, 45deg);
+	  }  
+	}					
+
+.rock_view:hover .view{
+	background:rgba(0,0,0,0.5);
+	float:left;
+	width:50%;
+	}
+
+.rock_view:hover .rock_view_over .view_over1{
+	-webkit-animation: view_over1 1s;
+	-moz-animation: view_over1 1s;
+	-ms-animation: view_over1 1s;
+	-o-animation: view_over1 1s;
+	}	
+.rock_view:hover .rock_view_over .view_over2{
+	-webkit-animation: view_over2 1s;
+	-moz-animation: view_over2 1s;
+	-ms-animation: view_over2 1s;
+	-o-animation: view_over2 1s;
+	}	
+.rock_view:hover .rock_view_over .view_over3{
+	-webkit-animation: view_over3 1s;
+	-moz-animation: view_over3 1s;
+	-ms-animation: view_over3 1s;
+	-o-animation: view_over3 1s;
+	}	
+.rock_view:hover .rock_view_over .view_over4{
+	-webkit-animation: view_over4 1s;
+	-moz-animation: view_over4 1s;
+	-ms-animation: view_over4 1s;
+	-o-animation: view_over4 1s;
+	}
+
+
+.rock_view .rock_detail{
+	position:absolute;
+	width:400px;
+	height:333px;
+	color:#fff;
+	bottom:25%;
+	left:50%;
+	-webkit-transform:translateX(-50%);
+	-moz-transform:translateX(-50%);
+	-ms-transform:translateX(-50%);
+	-o-transform:translateX(-50%);
+	transform:translateX(-50%);
+	text-align:center;
+	display:inline-block;
+	background:url(../images/pc.png) no-repeat;
+	background-size:100% 100%;
+	}		
+.rock_view .rock_detail h1{
+    z-index: 999;
+    position: relative;
+    margin-top: -45px;
+    font-size: 28px;
+    letter-spacing: 0.050em;
+	}
+
+.rock_detail .rock_detail_overlay{
+	position: absolute;
+	top: 18px;
+	left: 17px;
+	width: 91.5%;
+	height: 66%;
+	background: #999;
+	background-position: top center;
+	-webkit-transition: all 600ms cubic-bezier(0.165, 0.84, 0.44, 1);
+	transition: all 600ms cubic-bezier(0.165, 0.84, 0.44, 1);
+	-webkit-transition: all 10s cubic-bezier(0.165, 0.84, 0.44, 1);
+	transition: all 10s cubic-bezier(0.165, 0.84, 0.44, 1);
+	}
+.rock_detail .single_page{
+	background: url("../images/Preview_02.jpg") no-repeat 0px 0px;
+	background-size:100%;
+	}	
+.rock_detail .multi_page{
+	background: url("../images/Preview_03.jpg") no-repeat 0px 0px;
+	background-size:100%;
+	}	
+.rock_detail .night_club{
+	background: url("../images/Preview_04.jpg") no-repeat 0px 0px;
+	background-size:100%;
+	}	
+	
+.rock_detail:hover .rock_detail_overlay{
+	background-position:bottom center;
+	-webkit-transition: all 600ms cubic-bezier(0.165, 0.84, 0.44, 1);
+	transition: all 600ms cubic-bezier(0.165, 0.84, 0.44, 1);
+	-webkit-transition: all 10s cubic-bezier(0.165, 0.84, 0.44, 1);
+	transition: all 10s cubic-bezier(0.165, 0.84, 0.44, 1);
+	}	
+
+
+@media (max-width: 1600px) {
+.rock_view .rock_detail{
+	bottom:10%;
+}	
+}
+
+@media (max-width: 1440px) {
+.rock_view .rock_detail{
+    bottom: 5%;
+    width: 350px;
+    height: 283px;		
+}	
+.rock_detail .rock_detail_overlay{
+    top: 14px;
+    left: 14px;	
+}
+.rock_view .rock_detail h1{
+	font-size:20px;
+}
+
+}	
+
+@media (max-width: 1366px) {
+.rock_view .rock_detail{
+	bottom:10%;
+}	
+}
+
+@media (max-width: 1280px) {
+.rock_logo img{
+    max-width: 40%;	
+}	
+}
+
+@media (max-width: 1024px) {
+.rock_view .rock_detail{
+	width: 270px;
+    height: 203px;		
+}
+.rock_detail .rock_detail_overlay {
+    top: 11px;
+    left: 11px;
+    width: 91.9%;
+}
+.rock_logo img{
+    max-width: 60%;	
+}	
+}
+
+@media (max-width: 800px) {
+.rock_view .rock_detail {
+    width: 220px;
+    height: 203px;
+}
+.rock_detail .rock_detail_overlay {
+    top: 11px;
+    left: 9px;
+    width: 91.9%;
+}
+}
+
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+.rock_view{
+	width:100%;
+    height: auto !important;	
+	}
+.rock_logo{
+	width:100%;
+	top: 50px;
+	text-align:center;
+	display:inline-block;
+}
+.rock_view .rock_detail {
+    bottom: 50%;
+    -webkit-transform: translate(-50%,50%);
+    -moz-transform: translate(-50%,50%);
+    -ms-transform: translate(-50%,50%);
+    -o-transform: translate(-50%,50%);
+    transform: translate(-50%,50%);
+}
+.rock_view .rock_detail h1{
+	font-size:26px;
+}
+.rock_view img{
+	height:initial;
+}
+	
+}
+		

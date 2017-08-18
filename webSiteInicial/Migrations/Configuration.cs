@@ -9,7 +9,7 @@ namespace webSiteInicial.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             ContextKey = "webSiteInicial.Models.ApplicationDbContext";
         }
 

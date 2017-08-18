@@ -1,0 +1,63 @@
+﻿@model IEnumerable<webSiteInicial.Models.ArteEvento>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CaminhoArquivo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Evento.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isArtePrincipal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ativa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataExpira)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img alt="Imagem não disponível" src="@item.CaminhoArquivo" style="width:10%;height:auto" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Evento.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isArtePrincipal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ativa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataExpira)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

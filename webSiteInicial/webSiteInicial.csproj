@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort>44337</IISExpressSSLPort>
+    <IISExpressSSLPort>44347</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -178,7 +178,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArtesEventosController.cs" />
     <Compile Include="Controllers\BandasController.cs" />
+    <Compile Include="Controllers\EventosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MusicosController.cs" />
@@ -189,23 +191,110 @@
     <Compile Include="Migrations\201708102026108_premera.Designer.cs">
       <DependentUpon>201708102026108_premera.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708151911209_eventosAdd.cs" />
+    <Compile Include="Migrations\201708151911209_eventosAdd.Designer.cs">
+      <DependentUpon>201708151911209_eventosAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708152150159_artesAdd.cs" />
+    <Compile Include="Migrations\201708152150159_artesAdd.Designer.cs">
+      <DependentUpon>201708152150159_artesAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708171357032_arteseventos2.cs" />
+    <Compile Include="Migrations\201708171357032_arteseventos2.Designer.cs">
+      <DependentUpon>201708171357032_arteseventos2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708171414332_arteseventos3.cs" />
+    <Compile Include="Migrations\201708171414332_arteseventos3.Designer.cs">
+      <DependentUpon>201708171414332_arteseventos3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708171506056_arteseventos4.cs" />
+    <Compile Include="Migrations\201708171506056_arteseventos4.Designer.cs">
+      <DependentUpon>201708171506056_arteseventos4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ArteEvento.cs" />
     <Compile Include="Models\Banda.cs" />
+    <Compile Include="Models\Evento.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Musico.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="UiClasses\DropDownListType.cs" />
+    <Compile Include="Views\Shared\EditorTemplates\HttpPostedFileBase.ascx.cs">
+      <DependentUpon>HttpPostedFileBase.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\EditorTemplates\HttpPostedFileBase.ascx.designer.cs">
+      <DependentUpon>HttpPostedFileBase.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\animate.min.css" />
+    <Content Include="Content\bootstrap-select.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\color\color.css" />
+    <Content Include="Content\color\color2.css" />
+    <Content Include="Content\color\color3.css" />
+    <Content Include="Content\color\color4.css" />
+    <Content Include="Content\color\color5.css" />
+    <Content Include="Content\color\style.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\pattern\pattern.css" />
+    <Content Include="Content\pattern\pattern1.css" />
+    <Content Include="Content\pattern\pattern2.css" />
+    <Content Include="Content\pattern\pattern3.css" />
+    <Content Include="Content\pattern\pattern4.css" />
+    <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Fotos\11049121_1679337502347151_8057674869670485960_o.jpg" />
+    <Content Include="Fotos\11052225_1679337802347121_9156609478854007687_o.jpg" />
+    <Content Include="Fotos\11052225_1679337935680441_3824860260209810344_o.jpg" />
+    <Content Include="Fotos\12291671_1679340125680222_7069783291442743559_o.jpg" />
+    <Content Include="Fotos\12303911_1679340832346818_8924385581725080252_o.jpg" />
+    <Content Include="Fotos\12307350_1679337669013801_7917120296228919683_o.jpg" />
+    <Content Include="Fotos\12307560_1679337695680465_8343124419092059497_o.jpg" />
+    <Content Include="Fotos\12308132_1679340699013498_9215764921887447231_o.jpg" />
+    <Content Include="Fotos\12309515_1679341299013438_8558754696428070056_o.jpg" />
+    <Content Include="Fotos\12309572_1679340859013482_4299211942499811877_o.jpg" />
+    <Content Include="Fotos\12314649_1679337639013804_7473596275850879408_o.jpg" />
+    <Content Include="Fotos\12322443_1679339689013599_642337485172373748_o.jpg" />
+    <Content Include="Fotos\12322841_1679337505680484_8994084602685959622_o.jpg" />
+    <Content Include="Fotos\12339128_1679337509013817_8660464506583939890_o.jpg" />
+    <Content Include="Fotos\12932597_1731429763804591_1434881013286296664_n.jpg" />
+    <Content Include="Fotos\16707362_1884102061870693_7164535032484841032_o.jpg" />
+    <Content Include="Fotos\16797762_1884099288537637_2020210419617683381_o.jpg" />
+    <Content Include="Fotos\17966039_1919466628334236_3616297252738443903_o.png" />
+    <Content Include="Fotos\17966174_1919464428334456_6413994399634837960_o.png" />
+    <Content Include="Fotos\17966363_1919482448332654_6477812273317750691_o.png" />
+    <Content Include="Fotos\17966436_1919464581667774_7335116656805531700_o.png" />
+    <Content Include="Fotos\17990170_1919465011667731_4854662532234166375_o.png" />
+    <Content Include="Fotos\17990373_1919471635000402_114155381669045471_o.png" />
+    <Content Include="Fotos\17991457_1919471931667039_1557266561995891224_o.jpg" />
+    <Content Include="Fotos\18055813_1919479641666268_7342040364992365041_o.jpg" />
+    <Content Include="Fotos\18055846_1919464768334422_8927462343016464081_o.png" />
+    <Content Include="Fotos\18055944_1919465411667691_5270282264083296747_o.jpg" />
+    <Content Include="Fotos\18055981_1919464685001097_4855474595871555374_o.png" />
+    <Content Include="Fotos\18056026_1919467495000816_4462208325670672940_o.jpg" />
+    <Content Include="Fotos\18056493_1919467628334136_4784300446246469401_o.jpg" />
+    <Content Include="Fotos\18056520_1919464531667779_3018281233850693811_o.png" />
+    <Content Include="Fotos\18056537_1919466015000964_1781439576876959864_o.png" />
+    <Content Include="Fotos\18076583_1919467558334143_1109680594915246362_o.jpg" />
+    <Content Include="Fotos\18076813_1919478618333037_3355974409093642409_o.png" />
+    <Content Include="Fotos\18076832_1919470911667141_6926842914822357638_o.jpg" />
+    <Content Include="Fotos\18077077_1919474788333420_6054935912637395917_o.jpg" />
+    <Content Include="Fotos\Eventos\20728028_1981133032167595_6969973588165831539_n.jpg" />
+    <Content Include="Fotos\Eventos\20729465_1981538235460408_6789815426932069870_n.jpg" />
+    <Content Include="Fotos\garbs.jpg" />
+    <Content Include="Fotos\uf.jpg" />
+    <Content Include="Fotos\vangs.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -216,7 +305,104 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="images\404.png" />
+    <Content Include="images\bg\copyright.jpg" />
+    <Content Include="images\bg\main_bg.png" />
+    <Content Include="images\bg\no_video.jpg" />
+    <Content Include="images\bg\no_video.png" />
+    <Content Include="images\bg\slider_bg_overlay.png" />
+    <Content Include="images\club\club_image1.jpg" />
+    <Content Include="images\club\club_image2.jpg" />
+    <Content Include="images\gallery\gallery1.jpg" />
+    <Content Include="images\icon\botton_arrow.png" />
+    <Content Include="images\icon\botton_arrow0.png" />
+    <Content Include="images\icon\botton_arrow1.png" />
+    <Content Include="images\icon\botton_arrow2.png" />
+    <Content Include="images\icon\botton_arrow3.png" />
+    <Content Include="images\icon\botton_arrow4.png" />
+    <Content Include="images\icon\pager_divider.png" />
+    <Content Include="images\icon\star.png" />
+    <Content Include="images\icon\star0.png" />
+    <Content Include="images\icon\star1.png" />
+    <Content Include="images\icon\star2.png" />
+    <Content Include="images\icon\star3.png" />
+    <Content Include="images\icon\star4.png" />
+    <Content Include="images\Logo.png" />
+    <Content Include="images\Logo1.png" />
+    <Content Include="images\madbars.gif" />
+    <Content Include="images\patern\canvas-orange.jpg" />
+    <Content Include="images\patern\chalkboard.jpg" />
+    <Content Include="images\patern\dark-wood.jpg" />
+    <Content Include="images\patern\laser - Copy.gif" />
+    <Content Include="images\patern\laser.gif" />
+    <Content Include="images\patern\ocean.jpg" />
+    <Content Include="images\patern\shattered-island.gif" />
+    <Content Include="images\slider\slider1.png" />
+    <Content Include="images\slider_light.png" />
+    <Content Include="images\table\table_1.png" />
+    <Content Include="images\table\table_2.png" />
+    <Content Include="images\table\table_3.png" />
+    <Content Include="js\plugin\datetime\bower.json" />
+    <Content Include="js\plugin\datetime\datetimepicker.jquery.json" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="js\bootstrap-select.js" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\jquery-1.11.1.js" />
+    <Content Include="js\plugin\bxslider\images\bx_loader.gif" />
+    <Content Include="js\plugin\bxslider\images\controls.png" />
+    <Content Include="js\plugin\bxslider\jquery.bxslider.css" />
+    <Content Include="js\plugin\bxslider\jquery.bxslider.js" />
+    <Content Include="js\plugin\datetime\jquery.datetimepicker.css" />
+    <Content Include="js\plugin\datetime\jquery.datetimepicker.js" />
+    <Content Include="js\plugin\datetime\screen\1.png" />
+    <Content Include="js\plugin\datetime\screen\2.png" />
+    <Content Include="js\plugin\datetime\screen\3.1.png" />
+    <Content Include="js\plugin\datetime\screen\3.png" />
+    <Content Include="js\plugin\easing\jquery.easing.1.3.js" />
+    <Content Include="js\plugin\fancybox\blank.gif" />
+    <Content Include="js\plugin\fancybox\fancybox_loading%402x.gif" />
+    <Content Include="js\plugin\fancybox\fancybox_loading.gif" />
+    <Content Include="js\plugin\fancybox\fancybox_overlay.png" />
+    <Content Include="js\plugin\fancybox\fancybox_sprite%402x.png" />
+    <Content Include="js\plugin\fancybox\fancybox_sprite.png" />
+    <Content Include="js\plugin\fancybox\jquery.fancybox.css" />
+    <Content Include="js\plugin\fancybox\jquery.fancybox.js" />
+    <Content Include="js\plugin\ImageGrid\css\style.css" />
+    <Content Include="js\plugin\ImageGrid\js\jquery.gridrotator.js" />
+    <Content Include="js\plugin\ImageGrid\js\modernizr.custom.js" />
+    <Content Include="js\plugin\owl-carousel\AjaxLoader.gif" />
+    <Content Include="js\plugin\owl-carousel\grabbing.png" />
+    <Content Include="js\plugin\owl-carousel\owl.carousel.css" />
+    <Content Include="js\plugin\owl-carousel\owl.carousel.js" />
+    <Content Include="js\plugin\owl-carousel\owl.theme.css" />
+    <Content Include="js\plugin\owl-carousel\owl.transitions.css" />
+    <Content Include="js\plugin\player\css\audio.png" />
+    <Content Include="js\plugin\player\css\handle-lg.png" />
+    <Content Include="js\plugin\player\css\handle-sm.png" />
+    <Content Include="js\plugin\player\css\playpause.png" />
+    <Content Include="js\plugin\player\css\styles.css" />
+    <Content Include="js\plugin\player\css\time-box.png" />
+    <Content Include="js\plugin\player\js\flashmediaelement.swf" />
+    <Content Include="js\plugin\player\js\mediaelement-and-player.min.js" />
+    <Content Include="js\plugin\single-page\single-0.1.0.js" />
+    <Content Include="js\plugin\smoothscroll\smoothscroll.js" />
+    <Content Include="js\plugin\video\background.png" />
+    <Content Include="js\plugin\video\bigplay.png" />
+    <Content Include="js\plugin\video\bigplay.svg" />
+    <Content Include="js\plugin\video\controls-ted.png" />
+    <Content Include="js\plugin\video\controls-wmp-bg.png" />
+    <Content Include="js\plugin\video\controls-wmp.png" />
+    <Content Include="js\plugin\video\controls.png" />
+    <Content Include="js\plugin\video\controls.svg" />
+    <Content Include="js\plugin\video\flashmediaelement.swf" />
+    <Content Include="js\plugin\video\loading.gif" />
+    <Content Include="js\plugin\video\mediaelementplayer.css" />
+    <Content Include="js\select.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
@@ -234,7 +420,270 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Template\404.html" />
+    <Content Include="Template\about.html" />
+    <Content Include="Template\blog_category.html" />
+    <Content Include="Template\blog_full_width.html" />
+    <Content Include="Template\blog_left_sidebar.html" />
+    <Content Include="Template\blog_right_sidebar.html" />
+    <Content Include="Template\booking.html" />
+    <Content Include="Template\columns.html" />
+    <Content Include="Template\contact.html" />
+    <Content Include="Template\css\animate.min.css" />
+    <Content Include="Template\css\bootstrap-select.css" />
+    <Content Include="Template\css\bootstrap.css" />
+    <Content Include="Template\css\color\color.css" />
+    <Content Include="Template\css\color\color2.css" />
+    <Content Include="Template\css\color\color3.css" />
+    <Content Include="Template\css\color\color4.css" />
+    <Content Include="Template\css\color\color5.css" />
+    <Content Include="Template\css\color\style.css" />
+    <Content Include="Template\css\font-awesome.css" />
+    <Content Include="Template\css\main.css" />
+    <Content Include="Template\css\pattern\pattern.css" />
+    <Content Include="Template\css\pattern\pattern1.css" />
+    <Content Include="Template\css\pattern\pattern2.css" />
+    <Content Include="Template\css\pattern\pattern3.css" />
+    <Content Include="Template\css\pattern\pattern4.css" />
+    <Content Include="Template\css\style.css" />
+    <Content Include="Template\elements.html" />
+    <Content Include="Template\event.html" />
+    <Content Include="Template\favicon.png" />
+    <Content Include="Template\gallery_2column.html" />
+    <Content Include="Template\gallery_3column.html" />
+    <Content Include="Template\gallery_4column.html" />
+    <Content Include="Template\icon.html" />
+    <Content Include="Template\images\404.png" />
+    <Content Include="Template\images\bg\copyright.jpg" />
+    <Content Include="Template\images\bg\main_bg.png" />
+    <Content Include="Template\images\bg\no_video.jpg" />
+    <Content Include="Template\images\bg\no_video.png" />
+    <Content Include="Template\images\bg\slider_bg_overlay.png" />
+    <Content Include="Template\images\club\club_image1.jpg" />
+    <Content Include="Template\images\club\club_image2.jpg" />
+    <Content Include="Template\images\gallery\gallery1.jpg" />
+    <Content Include="Template\images\icon\botton_arrow.png" />
+    <Content Include="Template\images\icon\botton_arrow0.png" />
+    <Content Include="Template\images\icon\botton_arrow1.png" />
+    <Content Include="Template\images\icon\botton_arrow2.png" />
+    <Content Include="Template\images\icon\botton_arrow3.png" />
+    <Content Include="Template\images\icon\botton_arrow4.png" />
+    <Content Include="Template\images\icon\pager_divider.png" />
+    <Content Include="Template\images\icon\star.png" />
+    <Content Include="Template\images\icon\star0.png" />
+    <Content Include="Template\images\icon\star1.png" />
+    <Content Include="Template\images\icon\star2.png" />
+    <Content Include="Template\images\icon\star3.png" />
+    <Content Include="Template\images\icon\star4.png" />
+    <Content Include="Template\images\Logo.png" />
+    <Content Include="Template\images\Logo1.png" />
+    <Content Include="Template\images\madbars.gif" />
+    <Content Include="Template\images\patern\canvas-orange.jpg" />
+    <Content Include="Template\images\patern\chalkboard.jpg" />
+    <Content Include="Template\images\patern\dark-wood.jpg" />
+    <Content Include="Template\images\patern\laser - Copy.gif" />
+    <Content Include="Template\images\patern\laser.gif" />
+    <Content Include="Template\images\patern\ocean.jpg" />
+    <Content Include="Template\images\patern\shattered-island.gif" />
+    <Content Include="Template\images\slider\slider1.png" />
+    <Content Include="Template\images\slider_light.png" />
+    <Content Include="Template\images\table\table_1.png" />
+    <Content Include="Template\images\table\table_2.png" />
+    <Content Include="Template\images\table\table_3.png" />
+    <Content Include="Template\index.html" />
+    <Content Include="Template\js\bootstrap-select.js" />
+    <Content Include="Template\js\bootstrap.js" />
+    <Content Include="Template\js\custom.js" />
+    <Content Include="Template\js\jquery-1.11.1.js" />
+    <Content Include="Template\js\plugin\bxslider\images\bx_loader.gif" />
+    <Content Include="Template\js\plugin\bxslider\images\controls.png" />
+    <Content Include="Template\js\plugin\bxslider\jquery.bxslider.css" />
+    <Content Include="Template\js\plugin\bxslider\jquery.bxslider.js" />
+    <Content Include="Template\js\plugin\datetime\jquery.datetimepicker.css" />
+    <Content Include="Template\js\plugin\datetime\jquery.datetimepicker.js" />
+    <Content Include="Template\js\plugin\datetime\screen\1.png" />
+    <Content Include="Template\js\plugin\datetime\screen\2.png" />
+    <Content Include="Template\js\plugin\datetime\screen\3.1.png" />
+    <Content Include="Template\js\plugin\datetime\screen\3.png" />
+    <Content Include="Template\js\plugin\easing\jquery.easing.1.3.js" />
+    <Content Include="Template\js\plugin\fancybox\blank.gif" />
+    <Content Include="Template\js\plugin\fancybox\fancybox_loading%402x.gif" />
+    <Content Include="Template\js\plugin\fancybox\fancybox_loading.gif" />
+    <Content Include="Template\js\plugin\fancybox\fancybox_overlay.png" />
+    <Content Include="Template\js\plugin\fancybox\fancybox_sprite%402x.png" />
+    <Content Include="Template\js\plugin\fancybox\fancybox_sprite.png" />
+    <Content Include="Template\js\plugin\fancybox\jquery.fancybox.css" />
+    <Content Include="Template\js\plugin\fancybox\jquery.fancybox.js" />
+    <Content Include="Template\js\plugin\ImageGrid\css\style.css" />
+    <Content Include="Template\js\plugin\ImageGrid\js\jquery.gridrotator.js" />
+    <Content Include="Template\js\plugin\ImageGrid\js\modernizr.custom.js" />
+    <Content Include="Template\js\plugin\owl-carousel\AjaxLoader.gif" />
+    <Content Include="Template\js\plugin\owl-carousel\grabbing.png" />
+    <Content Include="Template\js\plugin\owl-carousel\owl.carousel.css" />
+    <Content Include="Template\js\plugin\owl-carousel\owl.carousel.js" />
+    <Content Include="Template\js\plugin\owl-carousel\owl.theme.css" />
+    <Content Include="Template\js\plugin\owl-carousel\owl.transitions.css" />
+    <Content Include="Template\js\plugin\player\css\audio.png" />
+    <Content Include="Template\js\plugin\player\css\handle-lg.png" />
+    <Content Include="Template\js\plugin\player\css\handle-sm.png" />
+    <Content Include="Template\js\plugin\player\css\playpause.png" />
+    <Content Include="Template\js\plugin\player\css\styles.css" />
+    <Content Include="Template\js\plugin\player\css\time-box.png" />
+    <Content Include="Template\js\plugin\player\js\flashmediaelement.swf" />
+    <Content Include="Template\js\plugin\player\js\mediaelement-and-player.min.js" />
+    <Content Include="Template\js\plugin\single-page\single-0.1.0.js" />
+    <Content Include="Template\js\plugin\smoothscroll\smoothscroll.js" />
+    <Content Include="Template\js\plugin\video\background.png" />
+    <Content Include="Template\js\plugin\video\bigplay.png" />
+    <Content Include="Template\js\plugin\video\bigplay.svg" />
+    <Content Include="Template\js\plugin\video\controls-ted.png" />
+    <Content Include="Template\js\plugin\video\controls-wmp-bg.png" />
+    <Content Include="Template\js\plugin\video\controls-wmp.png" />
+    <Content Include="Template\js\plugin\video\controls.png" />
+    <Content Include="Template\js\plugin\video\controls.svg" />
+    <Content Include="Template\js\plugin\video\flashmediaelement.swf" />
+    <Content Include="Template\js\plugin\video\loading.gif" />
+    <Content Include="Template\js\plugin\video\mediaelementplayer.css" />
+    <Content Include="Template\js\select.js" />
+    <Content Include="Template\landing-page\css\bootstrap.css" />
+    <Content Include="Template\landing-page\css\main.css" />
+    <Content Include="Template\landing-page\css\style.css" />
+    <Content Include="Template\landing-page\favicon.png" />
+    <Content Include="Template\landing-page\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Template\landing-page\images\1.jpg" />
+    <Content Include="Template\landing-page\images\2.jpg" />
+    <Content Include="Template\landing-page\images\3.jpg" />
+    <Content Include="Template\landing-page\images\Logo.png" />
+    <Content Include="Template\landing-page\images\pc.png" />
+    <Content Include="Template\landing-page\images\Preview_02.jpg" />
+    <Content Include="Template\landing-page\images\Preview_03.jpg" />
+    <Content Include="Template\landing-page\images\Preview_04.jpg" />
+    <Content Include="Template\landing-page\index.html" />
+    <Content Include="Template\landing-page\js\bootstrap.js" />
+    <Content Include="Template\landing-page\js\custom.js" />
+    <Content Include="Template\landing-page\js\jquery-1.11.1.js" />
+    <Content Include="Template\night-club\about.html" />
+    <Content Include="Template\night-club\blog-category.html" />
+    <Content Include="Template\night-club\blog-center.html" />
+    <Content Include="Template\night-club\blog-full-width.html" />
+    <Content Include="Template\night-club\blog-single-with-sidebar.html" />
+    <Content Include="Template\night-club\blog-single.html" />
+    <Content Include="Template\night-club\booking.html" />
+    <Content Include="Template\night-club\conatct-us.html" />
+    <Content Include="Template\night-club\css\animation.css" />
+    <Content Include="Template\night-club\css\bootstrap.min.css" />
+    <Content Include="Template\night-club\css\font-awesome.min.css" />
+    <Content Include="Template\night-club\css\font.css" />
+    <Content Include="Template\night-club\css\main.css" />
+    <Content Include="Template\night-club\css\responsive.css" />
+    <Content Include="Template\night-club\css\style.css" />
+    <Content Include="Template\night-club\event.html" />
+    <Content Include="Template\night-club\fonts\fontawesome-webfont.svg" />
+    <Content Include="Template\night-club\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Template\night-club\images\bg\pattern_bg.jpg" />
+    <Content Include="Template\night-club\images\bottom_line.png" />
+    <Content Include="Template\night-club\images\bottom_line2.png" />
+    <Content Include="Template\night-club\images\icon\.com.svg" />
+    <Content Include="Template\night-club\images\icon\Contact.svg" />
+    <Content Include="Template\night-club\images\icon\cursor.svg" />
+    <Content Include="Template\night-club\images\icon\favicon-black.png" />
+    <Content Include="Template\night-club\images\icon\favicon.png" />
+    <Content Include="Template\night-club\images\icon\Favicon.svg" />
+    <Content Include="Template\night-club\images\icon\Logo.svg" />
+    <Content Include="Template\night-club\images\icon\Logo_main.svg" />
+    <Content Include="Template\night-club\images\icon\Mail.svg" />
+    <Content Include="Template\night-club\images\icon\Map.svg" />
+    <Content Include="Template\night-club\images\icon\music_loader.gif" />
+    <Content Include="Template\night-club\images\icon\Play.svg" />
+    <Content Include="Template\night-club\images\icon\Play_btn.svg" />
+    <Content Include="Template\night-club\images\icon\restaurant_1.jpg" />
+    <Content Include="Template\night-club\images\icon\table1.svg" />
+    <Content Include="Template\night-club\images\icon\table2.svg" />
+    <Content Include="Template\night-club\images\icon\table3.svg" />
+    <Content Include="Template\night-club\images\Logo.png" />
+    <Content Include="Template\night-club\images\media\space.mp4" />
+    <Content Include="Template\night-club\index.html" />
+    <Content Include="Template\night-club\js\animation\jquery.scrollorama.js" />
+    <Content Include="Template\night-club\js\animation\TweenMax.js" />
+    <Content Include="Template\night-club\js\bootstrap.min.js" />
+    <Content Include="Template\night-club\js\custom.js" />
+    <Content Include="Template\night-club\js\jquery.min.js" />
+    <Content Include="Template\night-club\js\plugins\crousel\owl.carousel.css" />
+    <Content Include="Template\night-club\js\plugins\crousel\owl.carousel.js" />
+    <Content Include="Template\night-club\js\plugins\gallery\icons\blank.gif" />
+    <Content Include="Template\night-club\js\plugins\gallery\icons\fancybox_loading%402x.gif" />
+    <Content Include="Template\night-club\js\plugins\gallery\icons\fancybox_loading.gif" />
+    <Content Include="Template\night-club\js\plugins\gallery\icons\fancybox_sprite%402x.png" />
+    <Content Include="Template\night-club\js\plugins\gallery\icons\fancybox_sprite.png" />
+    <Content Include="Template\night-club\js\plugins\gallery\jquery.magnific-popup.js" />
+    <Content Include="Template\night-club\js\plugins\gallery\magnific-popup.css" />
+    <Content Include="Template\night-club\js\plugins\jquery_ui\images\ui-icons_444444_256x240.png" />
+    <Content Include="Template\night-club\js\plugins\jquery_ui\images\ui-icons_555555_256x240.png" />
+    <Content Include="Template\night-club\js\plugins\jquery_ui\images\ui-icons_777777_256x240.png" />
+    <Content Include="Template\night-club\js\plugins\jquery_ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Template\night-club\js\plugins\jquery_ui\jquery-ui.css" />
+    <Content Include="Template\night-club\js\plugins\jquery_ui\jquery-ui.js" />
+    <Content Include="Template\night-club\js\plugins\revolution\css\layers.css" />
+    <Content Include="Template\night-club\js\plugins\revolution\css\settings.css" />
+    <Content Include="Template\night-club\js\plugins\revolution\fonts\revicons\revicons.svg" />
+    <Content Include="Template\night-club\js\plugins\revolution\icons\arrow-left.png" />
+    <Content Include="Template\night-club\js\plugins\revolution\icons\arrow-right.png" />
+    <Content Include="Template\night-club\js\plugins\revolution\icons\loader.gif" />
+    <Content Include="Template\night-club\js\plugins\revolution\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="Template\night-club\js\plugins\revolution\js\jquery.themepunch.tools.min.js" />
+    <Content Include="Template\night-club\js\plugins\revolution\js\revolution.extension.actions.min.js" />
+    <Content Include="Template\night-club\js\plugins\revolution\js\revolution.extension.layeranimation.min.js" />
+    <Content Include="Template\night-club\js\plugins\revolution\js\revolution.extension.navigation.min.js" />
+    <Content Include="Template\night-club\js\plugins\revolution\js\revolution.extension.parallax.min.js" />
+    <Content Include="Template\night-club\js\plugins\revolution\js\revolution.extension.slideanims.min.js" />
+    <Content Include="Template\night-club\js\plugins\video\css\bigplay.png" />
+    <Content Include="Template\night-club\js\plugins\video\css\bigplay.svg" />
+    <Content Include="Template\night-club\js\plugins\video\css\controls-playlist.png" />
+    <Content Include="Template\night-club\js\plugins\video\css\controls.png" />
+    <Content Include="Template\night-club\js\plugins\video\css\controls.svg" />
+    <Content Include="Template\night-club\js\plugins\video\css\loading.gif" />
+    <Content Include="Template\night-club\js\plugins\video\css\mediaelementplayer.min.css" />
+    <Content Include="Template\night-club\js\plugins\video\css\mep-feature-playlist.css" />
+    <Content Include="Template\night-club\js\plugins\video\icon\Backward.svg" />
+    <Content Include="Template\night-club\js\plugins\video\icon\Backward_hover.svg" />
+    <Content Include="Template\night-club\js\plugins\video\icon\favorite.svg" />
+    <Content Include="Template\night-club\js\plugins\video\icon\Forward.svg" />
+    <Content Include="Template\night-club\js\plugins\video\icon\Forward_hover.svg" />
+    <Content Include="Template\night-club\js\plugins\video\icon\Mute.svg" />
+    <Content Include="Template\night-club\js\plugins\video\icon\Pause.svg" />
+    <Content Include="Template\night-club\js\plugins\video\icon\Play.svg" />
+    <Content Include="Template\night-club\js\plugins\video\icon\repeat.svg" />
+    <Content Include="Template\night-club\js\plugins\video\icon\repeat_off.svg" />
+    <Content Include="Template\night-club\js\plugins\video\icon\shuffle.svg" />
+    <Content Include="Template\night-club\js\plugins\video\icon\shuffle_off.svg" />
+    <Content Include="Template\night-club\js\plugins\video\icon\Volume.svg" />
+    <Content Include="Template\night-club\js\plugins\video\js\mediaelement-and-player.min.js" />
+    <Content Include="Template\night-club\js\plugins\video\js\mep-feature-playlist.js" />
+    <Content Include="Template\night-club\photo-gallery.html" />
+    <Content Include="Template\night-club\track\LeanOn.mp3" />
+    <Content Include="Template\night-club\track\YouBelongWithMe.mp3" />
+    <Content Include="Template\night-club\video-gallery.html" />
+    <Content Include="Template\prices.html" />
+    <Content Include="Template\services.html" />
+    <Content Include="Template\single-page.html" />
+    <Content Include="Template\single_page.html" />
+    <Content Include="Template\track\Bailando%28English Version%29.mp3" />
+    <Content Include="Template\track\i-knew-you-were-trouble.mp3" />
+    <Content Include="Views\Eventos\Create.cshtml" />
+    <Content Include="Views\Eventos\Delete.cshtml" />
+    <Content Include="Views\Eventos\Details.cshtml" />
+    <Content Include="Views\Eventos\Edit.cshtml" />
+    <Content Include="Views\Eventos\Index.cshtml" />
+    <Content Include="Views\ArtesEventos\Create.cshtml" />
+    <Content Include="Views\ArtesEventos\Delete.cshtml" />
+    <Content Include="Views\ArtesEventos\Details.cshtml" />
+    <Content Include="Views\ArtesEventos\Edit.cshtml" />
+    <Content Include="Views\ArtesEventos\Index.cshtml" />
+    <None Include="Views\Galeria\index.chtml" />
+    <Content Include="Views\Shared\EditorTemplates\HttpPostedFileBase.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -282,9 +731,37 @@
     <Content Include="Views\Musicos\Details.cshtml" />
     <Content Include="Views\Musicos\Edit.cshtml" />
     <Content Include="Views\Musicos\Index.cshtml" />
+    <Content Include="Views\Home\Default.cshtml" />
+    <Content Include="Template\.htaccess" />
+    <Content Include="Template\ajaxmail.php" />
+    <Content Include="Template\book-table.php" />
+    <Content Include="Template\js\plugin\datetime\bower.json" />
+    <Content Include="Template\js\plugin\datetime\datetimepicker.jquery.json" />
+    <Content Include="Template\landing-page\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Template\landing-page\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Template\landing-page\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Template\night-club\ajaxmail.php" />
+    <Content Include="Template\night-club\book_table.php" />
+    <Content Include="Template\night-club\fonts\fontawesome-webfont.eot" />
+    <Content Include="Template\night-club\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Template\night-club\fonts\fontawesome-webfont.woff" />
+    <Content Include="Template\night-club\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Template\night-club\fonts\FontAwesome.otf" />
+    <Content Include="Template\night-club\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Template\night-club\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Template\night-club\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Template\night-club\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Template\night-club\js\plugins\revolution\fonts\.DS_Store" />
+    <Content Include="Template\night-club\js\plugins\revolution\fonts\index.php" />
+    <Content Include="Template\night-club\js\plugins\revolution\fonts\revicons\index.php" />
+    <Content Include="Template\night-club\js\plugins\revolution\fonts\revicons\revicons.eot" />
+    <Content Include="Template\night-club\js\plugins\revolution\fonts\revicons\revicons.ttf" />
+    <Content Include="Template\night-club\js\plugins\revolution\fonts\revicons\revicons.woff" />
+    <Content Include="Views\Shared\_LayoutTemplate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Template\fonts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -295,6 +772,21 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201708102026108_premera.resx">
       <DependentUpon>201708102026108_premera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708151911209_eventosAdd.resx">
+      <DependentUpon>201708151911209_eventosAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708152150159_artesAdd.resx">
+      <DependentUpon>201708152150159_artesAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708171357032_arteseventos2.resx">
+      <DependentUpon>201708171357032_arteseventos2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708171414332_arteseventos3.resx">
+      <DependentUpon>201708171414332_arteseventos3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708171506056_arteseventos4.resx">
+      <DependentUpon>201708171506056_arteseventos4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -315,7 +807,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53788</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44337/</IISUrl>
+          <IISUrl>https://localhost:44347/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
